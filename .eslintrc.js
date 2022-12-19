@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 module.exports = {
   root: true,
   extends: '@react-native-community',
@@ -6,7 +8,7 @@ module.exports = {
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
-      rules: {
+      rules: {       
         '@typescript-eslint/no-shadow': ['error'],
         'no-shadow': 'off',
         'no-undef': 'off',

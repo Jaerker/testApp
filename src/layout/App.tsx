@@ -1,4 +1,5 @@
-/**
+/* eslint-disable prettier/prettier */
+/*
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
@@ -11,12 +12,11 @@
 import React from 'react';
 import {
   StatusBar,
-  StyleSheet,
-  useColorScheme
+  useColorScheme,
 } from 'react-native';
 
 import {
-  Colors
+  Colors,
 } from 'react-native/Libraries/NewAppScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import TestScreen from '../screens/test/TestScreen';
@@ -47,13 +47,13 @@ const App = () => {
           backgroundColor={backgroundStyle.backgroundColor}
         />
 
-        <Stack.Navigator initialRouteName='Authentication'>
+        <Stack.Navigator initialRouteName="Authentication">
 
-          <Stack.Screen name='Test' options={{ title: 'Test Area' }}>
-                {(props) => <TestScreen {...props} />} 
+          <Stack.Screen name="Test" options={{ title: 'Test Area' }}>
+                {(props) => <TestScreen {...props} />}
           </Stack.Screen>
 
-          <Stack.Screen name='Authentication' options={{ title: 'Welcome!' }}>
+          <Stack.Screen name="Authentication" options={{ title: 'Welcome!' }}>
             {(props) => <AuthenticationScreen {...props} />}
           </Stack.Screen>
 
