@@ -10,11 +10,12 @@ import { useStore } from "../../stores/store";
 export default observer(function Test() {
 
     const { testStore } = useStore();
-    const { testInfo, loading, loadTest, setToken, getToken } = testStore;
+    const { testInfo, loading, loadTest} = testStore;
 
     const text = {
         color: useColorScheme() === 'dark' ? '#000000' : '#ffffff'
     }
+
 
     useEffect(() => {
         if (!testInfo) loadTest();

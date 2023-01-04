@@ -1,5 +1,6 @@
 import axios, {AxiosResponse} from 'axios';
-import { postModule } from '../models/post';
+import Post from '../models/post';
+import {LogBox} from 'react-native';
 
 
 axios.defaults.baseURL = 'https://blog-api-production-68d6.up.railway.app/api';
@@ -15,12 +16,12 @@ const requests = {
 }
 
 const Test = {
-    test: () => requests.get<postModule.Post>('/auth/test')
+    test: () => requests.get<Post>('/auth/test')
 }
 const Posts = {
-    list: () => requests.get<postModule.Post[]>('/blog/posts'),
-    details: (id: string) => requests.get<postModule.Post>(`/posts/${id}`),
-    create: (post: postModule.Post) => requests.post<void>('/posts', post),
+    list: () => requests.get<Post[]>('/blog/posts'),
+    details: (id: string) => requests.get<Post>(`/posts/${id}`),
+    create: (post: Post) => requests.post<void>('/posts', post),
     delete: (id: string) => requests.delete<void>(`/blog/posts/${id}`)
 }
 
@@ -30,3 +31,5 @@ const agent = {
 }
 
 export default agent;
+
+

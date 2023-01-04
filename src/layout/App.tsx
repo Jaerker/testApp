@@ -12,6 +12,7 @@
 import React from 'react';
 import {
   StatusBar,
+  View,
   useColorScheme,
 } from 'react-native';
 
@@ -32,7 +33,9 @@ const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
 
-
+  const viewStyle = {
+    backgroundColor: useColorScheme() === 'dark' ? '#ffffff' : '#000000' 
+}
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
@@ -40,8 +43,9 @@ const App = () => {
   const Stack = createNativeStackNavigator();
 
   return (
+    
     <StoreContext.Provider value={store}>
-      <NavigationContainer>
+      <NavigationContainer >
         <StatusBar
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           backgroundColor={backgroundStyle.backgroundColor}
@@ -50,7 +54,9 @@ const App = () => {
         <Stack.Navigator initialRouteName="Authentication">
 
           <Stack.Screen name="Test" options={{ title: 'Test Area' }}>
-                {(props) => <TestScreen {...props} />}
+                {(props) =>{
+              return  <TestScreen {...props} />;
+            }}
           </Stack.Screen>
 
           <Stack.Screen name="Authentication" options={{ title: 'Welcome!' }}>

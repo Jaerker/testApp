@@ -2,7 +2,6 @@ import { makeAutoObservable } from "mobx";
 import agent from "../api/agent";
 import Post from "../models/post";
 import EncryptedStorage from 'react-native-encrypted-storage';
-import { stringifyKey } from "mobx/dist/internal";
 
 
 export default class testStore {
@@ -18,6 +17,7 @@ export default class testStore {
         this.setLoading(true);
         try {
             const info = await agent.Test.test();
+            
 
             if (info) this.testInfo = info;
             this.setLoading(false);

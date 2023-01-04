@@ -24,7 +24,6 @@ const TestScreen = ({navigation}: Props) => {
 
     return (<View style={styles.container}>
             <Test />
-            <Test  />
         </View>);
 };
 
